@@ -59,7 +59,42 @@ int main() {
   cout << boolalpha << booo << endl;
   cout << showbase << hex << y << endl;
 
-  const double zz = 123;
+  double zz = 123;
   cout << showpoint << zz << endl;
   cout << scientific << zz << endl;
+
+  int s1, s2, s3, max, min;
+  cout << "s1: ";
+  cin >> s1;
+  cout << "s2: ";
+  cin >> s2;
+  cout << "s3: ";
+  cin >> s3;
+
+  if (s1 > s2) {
+    max = s1;
+    min = s2;
+  } else {
+    max = s2;
+    min = s1;
+  }
+  if (s3 > max) { 
+    max = s3;
+  }
+  if (s3 < min) {
+    min = s3;
+  }
+  cout << dec << "Adjust score: " << (max + min) / 2 << endl;
+  
+  int count;
+  cout << "1~9: ";
+  cin >> count;
+  switch(count){
+    case 1: cout << "hi"; break;
+    case 2: cout << "okay"; break;
+    case 3: cout << "bye"; break;
+    default: cout << "why";
+  }
+  cout << endl;
+  return 0;
 }
