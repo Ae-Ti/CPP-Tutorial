@@ -1,7 +1,8 @@
+#include <fstream>  // 파일 읽어들이기 ex) ifstream a;
 #include <iostream> // 기본 입출력
 #include <limits> // 자료형 범위 확인 ex) int a = numeric_limits<int>::max();
-#include <string>   // 문자열 자료형 ex)string a;
-#include <typeinfo> // 자료형 확인 ex)static_cast<int>(a);
+#include <string>   // 문자열 자료형 ex) string a;
+#include <typeinfo> // 자료형 확인 ex) static_cast<int>(a);
 
 using namespace std;
 
@@ -78,23 +79,46 @@ int main() {
     max = s2;
     min = s1;
   }
-  if (s3 > max) { 
+  if (s3 > max) {
     max = s3;
   }
   if (s3 < min) {
     min = s3;
   }
   cout << dec << "Adjust score: " << (max + min) / 2 << endl;
-  
+
   int count;
   cout << "1~9: ";
   cin >> count;
-  switch(count){
-    case 1: cout << "hi"; break;
-    case 2: cout << "okay"; break;
-    case 3: cout << "bye"; break;
-    default: cout << "why";
+  switch (count) {
+  case 1:
+    cout << "hi";
+    break;
+  case 2:
+    cout << "okay";
+    break;
+  case 3:
+    cout << "bye";
+    break;
+  default:
+    cout << "why";
   }
   cout << endl;
+
+  int ii;
+  bool flag;
+
+  flag = false;
+  cout << "EOF is Ctrl + z" << endl;
+  while (cin >> ii && !flag) {
+    if (ii >= 150) {
+      cout << "찾는 숫자 = " << ii;
+      flag = true;
+    }
+  }
+  if (!flag) {
+    cout << "there isn't number" << endl;
+  }
+
   return 0;
 }
