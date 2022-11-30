@@ -6,6 +6,9 @@
 
 using namespace std;
 
+int maxandplus(int num1, int num2);
+int maxandplus(int num1, int num2, int &num3);
+
 int main() {
   /*std::cout << "Hello World!\n";
   std::cout << endl;
@@ -112,7 +115,7 @@ int main() {
   cout << "EOF is Ctrl + z" << endl;
   while (cin >> ii && !flag) {
     if (ii >= 150) {
-      cout << "찾는 숫자 = " << ii;
+      cout << "찾는 숫자 = " << ii << endl;
       flag = true;
     }
   }
@@ -120,5 +123,18 @@ int main() {
     cout << "there isn't number" << endl;
   }
 
+  int num3 = 9;
+  cout << "maxandplus(5,6,7) = " << maxandplus(5, 6, num3) << endl;
+  cout << num3 << endl;
   return 0;
+}
+
+int maxandplus(int num1, int num2) { return num1 + num2; }
+
+int maxandplus(int num1, int num2, int &num3) {
+  num3++;
+  if (num1 > num2)
+    return num1;
+  else
+    return num2;
 }
