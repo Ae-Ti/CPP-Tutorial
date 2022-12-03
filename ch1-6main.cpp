@@ -2,7 +2,7 @@
 #include <iostream> // 기본 입출력
 #include <limits> // 자료형 범위 확인 ex) int a = numeric_limits<int>::max();
 #include <string>   // 문자열 자료형 ex) string a;
-#include <typeinfo> // 자료형 확인 ex) static_cast<int>(a);
+#include <typeinfo> // 자료형 확인 ex) typeid(a).name();
 
 using namespace std;
 
@@ -50,7 +50,7 @@ int main() {
   cout << endl;
   cout << typeid(y = 140.56).name();
   cout << endl;
-  cout << "캐스팅한 경우 z: " << static_cast<int>(z);
+  cout << "캐스팅한 경우 z: " << static_cast<int>(z); // 형 변환
   cout << endl;
 
   int limitint = numeric_limits<int>::max();
