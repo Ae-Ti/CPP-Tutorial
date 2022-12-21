@@ -20,9 +20,9 @@ int main() {
 
   iter2 = vec.rbegin();
   iter2 += 4;
-  cout << *iter1 << " ";
+  cout << *iter2 << " ";
   iter2 -= 2;
-  cout << *iter1 << endl;
+  cout << *iter2 << endl;
 
   int power = 5;
   vector<vector<int>> pascal(power + 1, vector<int>());

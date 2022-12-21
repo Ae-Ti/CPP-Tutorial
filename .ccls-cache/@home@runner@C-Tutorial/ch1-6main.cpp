@@ -2,7 +2,7 @@
 #include <iostream> // 기본 입출력
 #include <limits> // 자료형 범위 확인 ex) int a = numeric_limits<int>::max();
 #include <string>   // 문자열 자료형 ex) string a;
-#include <typeinfo> // 자료형 확인 ex) typeid(a);
+#include <typeinfo> // 자료형 확인 ex) typeid(a).name();
 
 using namespace std;
 

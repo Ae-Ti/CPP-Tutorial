@@ -1,6 +1,6 @@
+#include <iomanip>
 #include <iostream>
 #include <vector>
-#include <iomanip>
 using namespace std;
 
 int main() {
@@ -9,7 +9,7 @@ int main() {
   vector<int>::reverse_iterator iter2;
 
   for (int i = 0; i < 10; i++) {
-    vec.push_back(i * 10)
+    vec.push_back(i * 10);
   }
 
   iter1 = vec.begin();
@@ -20,12 +20,34 @@ int main() {
 
   iter2 = vec.rbegin();
   iter2 += 4;
-  cout << *iter1 << " ";
+  cout << *iter2<< " ";
   iter2 -= 2;
-  cout << *iter1 << endl;
+  cout << *iter2 << endl;
 
   int power = 5;
-  vector<vector<int>> pascal
-  
+  vector<vector<int>> pascal(power + 1, vector<int>());
+
+  for (int i = 0; i <= power; i++) {
+    for (int j = 0; j < i + 1; j++) {
+      pascal[i].push_back(0);
+    }
+  }
+
+  for (int i = 0; i <= power; i++) {
+    for (int j = 0; j < i + 1; j++) {
+      if (j == 0 || i == j) {
+        pascal[i][j] = 1;
+      } else {
+        pascal[i][j] = pascal[i - 1][j - 1] + pascal[i - 1][j];
+      }
+    }
+  }
+
+  for (int i = 0; i <= power; i++) {
+    for (int j = 0; j < i + 1; j++) {
+      cout << setw(4) << pascal[i][j] << " ";
+    }
+    cout << endl;
+  }
   return 0;
 }
